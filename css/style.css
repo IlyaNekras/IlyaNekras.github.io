@@ -950,7 +950,7 @@ h3.title {
         }
     }
 
-  .footer  .container {
+    .footer .container {
         padding-right: 60px;
     }
 
@@ -1213,10 +1213,11 @@ h3.title {
 
     .stages__item-box {
         font-size: 17px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         padding-top: 16px;
         padding-right: 27px;
     }
+
 
     .stages__item-box:before {
         top: 14px;
