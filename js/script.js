@@ -1,51 +1,43 @@
 'use strict'
-document.addEventListener("DOMContentLoaded", () => {
-    const sliderParticipants = new Swiper('.participants .swiper-container', {
+document.addEventListener('DOMContentLoaded', () => {
+    // SLIDER
+    new Swiper(".section-how__slider", {
         slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        pagination: {
-            type: 'fraction',
-            el: '.participants .swiper-pagination',
-        },
         autoplay: {
             delay: 4000,
         },
-        speed: 900,
-        navigation: {
-            nextEl: '.participants .swiper-button-next',
-            prevEl: '.participants .swiper-button-prev',
+        loop: true,
+        pagination: {
+            el: ".section-how__slider .swiper-pagination",
+            dinamicBullets: true,
+            clickable: true,
         },
-        breakpoints: {
-            550: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-            },
-            1000: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-        }
     });
 
-    if (window.innerWidth <= 1024) {
-        const sliderStages = new Swiper('.stages .swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            autoHeight: true,
-            pagination: {
-                el: '.stages .swiper-pagination',
-            },
-            navigation: {
-                nextEl: '.stages .swiper-button-next',
-                prevEl: '.stages .swiper-button-prev',
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-            }
-        });
+    // SHOW/HIDE ANSWER 
+    document.querySelectorAll('.section-faq__item').forEach(item => {
+        item.querySelector('.section-faq__item-head').addEventListener('click', () => item.classList.toggle('active'));
+    });
+
+    // SHOW/HIDE TEXT 
+    document.querySelectorAll(".more-btn").forEach(btn => {
+        btn.addEventListener("click", () => btn.parentElement.classList.toggle("active"));
+    });
+
+    // SHOW/HIDE MOBILE MENU 
+    document.querySelector(".header-burger").addEventListener("click", function () {
+        document.body.classList.toggle("active");
+        document.querySelector('.header').classList.toggle("active");
+    });
+
+    function hideMobileMenu(e) {
+        if (!e.target.closest('.header-content') && !e.target.closest('.header-burger')) {
+            document.body.classList.remove("active");
+            document.querySelector('.header').classList.remove("active");
+        }
     }
+
+    document.addEventListener('click', function (e) {
+        hideMobileMenu(e);
+    });
 });
