@@ -1443,7 +1443,7 @@ a.header-link--phone {
 
 @media screen and (max-width: 992px) {
     .header-logo {
-        max-width: 200px;
+        max-width: 210px;
         max-height: 50px;
     }
 
