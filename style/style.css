@@ -717,6 +717,7 @@ a.header-link--phone {
 .section-reviews__value {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
     justify-content: space-between;
     gap: 10px;
 }
@@ -730,8 +731,20 @@ a.header-link--phone {
     line-height: 52px;
 }
 
-.section-reviews__value {
-    margin-bottom: 20px;
+.section-reviews__item--rate .section-reviews__stars {
+    position: relative;
+}
+
+.section-reviews__item--rate .section-reviews__stars::before {
+    content: '';
+    background: center center/contain no-repeat;
+    width: 19px;
+    height: 49px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-55%);
+    right: 0;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='19' height='49' viewBox='0 0 19 49' fill='none'%3e%3cg clip-path='url(%23clip0_753_441)'%3e%3cpath d='M-5.5 0L-0.649248 19.6492L19 24.5L-0.649248 29.3508L-5.5 49L-10.3508 29.3508L-30 24.5L-10.3508 19.6492L-5.5 0Z' fill='%23E0E0E0'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0_753_441'%3e%3crect width='19' height='49' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
 }
 
 .section-reviews__item-bottom {
@@ -1416,6 +1429,7 @@ a.header-link--phone {
 @media screen and (max-width: 1280px) {
     .header {
         padding: 6px 10px;
+        border-radius: 0 0 30px 30px;
     }
 
     .section-price__wrapper {
@@ -1428,6 +1442,11 @@ a.header-link--phone {
 }
 
 @media screen and (max-width: 992px) {
+    .header-logo {
+        max-width: 200px;
+        max-height: 50px;
+    }
+
     body.active {
         overflow: hidden;
     }
@@ -1509,6 +1528,10 @@ a.header-link--phone {
         line-height: 1.2;
     }
 
+    .section-how {
+        border-radius: 30px;
+    }
+
     .section-why__item-num,
     .section-how__slide-num,
     h2.title {
@@ -1561,17 +1584,19 @@ a.header-link--phone {
 
     .section-leads__item {
         padding-left: 20px;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .section-leads__item img {
-        max-height: 150px;
+        display: none;
     }
 
     .section-leads__box {
         padding-top: 20px;
         gap: 10px;
+    }
+
+    .section-clients__item img {
+        width: 100%;
     }
 
     .section-contacts .text,
@@ -1582,6 +1607,11 @@ a.header-link--phone {
 
     .section-reviews__stars img {
         width: 25px;
+        height: 25px;
+    }
+
+    .section-reviews__item--rate .section-reviews__stars::before {
+        width: 10px;
         height: 25px;
     }
 
@@ -1599,6 +1629,7 @@ a.header-link--phone {
     }
 
     .section-video {
+        border-radius: 30px;
         height: 200px;
     }
 
@@ -1609,6 +1640,7 @@ a.header-link--phone {
     .section-contacts {
         padding: 20px;
         margin: 40px 0;
+        border-radius: 30px;
     }
 
     .section-technology__img,
@@ -1625,6 +1657,7 @@ a.header-link--phone {
 
     .section-dark {
         margin: 20px 0;
+        border-radius: 30px;
     }
 
     .section-faq__item-head {
