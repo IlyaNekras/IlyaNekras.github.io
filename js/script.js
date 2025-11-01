@@ -1,37 +1,42 @@
 'use strict'
 document.addEventListener('DOMContentLoaded', () => {
-    // SLIDER
-    new Swiper(".section-how__slider", {
-        slidesPerView: 1,
+    // SLIDER TEAM
+    new Swiper(".team-slider", {
+        slidesPerView: 2,
+        spaceBetween: 10,
         autoplay: {
             delay: 4000,
         },
         loop: true,
-        pagination: {
-            el: ".section-how__slider .swiper-pagination",
-            dinamicBullets: true,
-            clickable: true,
+        navigation: {
+            prevEl: '.team .swiper-button-prev',
+            nextEl: '.team .swiper-button-next',
         },
     });
 
-    // SHOW/HIDE ANSWER 
-    document.querySelectorAll('.section-faq__item').forEach(item => {
-        item.querySelector('.section-faq__item-head').addEventListener('click', () => item.classList.toggle('active'));
+    // SLIDER 
+    new Swiper(".alert-slider", {
+        spaceBetween: 20,
+        slidesPerView: "auto",
+        autoplay: {
+            delay: 4000,
+        },
+        loop: true,
     });
 
-    // SHOW/HIDE TEXT 
-    document.querySelectorAll(".more-btn").forEach(btn => {
-        btn.addEventListener("click", () => btn.parentElement.classList.toggle("active"));
+    // SHOW/HIDE ANSWER 
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-item__head').addEventListener('click', () => item.classList.toggle('active'));
     });
 
     // SHOW/HIDE MOBILE MENU 
-    document.querySelector(".header-burger").addEventListener("click", function () {
+    document.querySelector(".burger").addEventListener("click", function () {
         document.body.classList.toggle("active");
         document.querySelector('.header').classList.toggle("active");
     });
 
     function hideMobileMenu(e) {
-        if (!e.target.closest('.header-content') && !e.target.closest('.header-burger')) {
+        if (!e.target.closest('.header-content') && !e.target.closest('.burger')) {
             document.body.classList.remove("active");
             document.querySelector('.header').classList.remove("active");
         }
