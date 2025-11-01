@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // SHOW/HIDE MOBILE MENU 
     document.querySelector(".burger").addEventListener("click", function () {
         document.body.classList.toggle("active");
-        document.querySelector('.header').classList.toggle("active");
+        header.classList.toggle("active");
     });
 
     function hideMobileMenu(e) {
         if (!e.target.closest('.header-content') && !e.target.closest('.burger')) {
             document.body.classList.remove("active");
-            document.querySelector('.header').classList.remove("active");
+            header.classList.remove("active");
         }
     }
 
