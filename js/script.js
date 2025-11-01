@@ -1,5 +1,15 @@
 'use strict'
 document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    header.classList.remove("fixed");
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            header.classList.add("fixed");
+        } else {
+            header.classList.remove("fixed");
+        }
+    });
+
     // SLIDER TEAM
     new Swiper(".team-slider", {
         slidesPerView: 2,

@@ -139,9 +139,18 @@ h1.title {
 .header {
     padding: 22px 10px;
     position: relative;
-    z-index: 1;
+    z-index: 99;
     max-width: 440px;
     margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+}
+
+.header.fixed {
+    background: rgba(0 0 0 / 0.6);
 }
 
 .header-wrap {
@@ -274,9 +283,6 @@ body.active {
 
 .promo {
     padding: 130px 0 90px;
-    top: -74px;
-    position: relative;
-    margin-bottom: -74px;
     background: url(../img/promo.jpg) center center/cover no-repeat;
 }
 
