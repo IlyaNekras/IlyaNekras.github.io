@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     header.classList.remove("fixed");
     window.addEventListener("scroll", function () {
-        if (window.scrollY > 200) {
+        if (window.scrollY > 50) {
             header.classList.add("fixed");
         } else {
             header.classList.remove("fixed");
