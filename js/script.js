@@ -1,11 +1,15 @@
 'use strict'
 document.addEventListener('DOMContentLoaded', () => {
+    let scroll = false;
+
     const header = document.querySelector('.header');
     header.classList.remove("fixed");
     window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) {
+        if (!scroll && window.scrollY > 50) {
+            scroll = true;
             header.classList.add("fixed");
         } else {
+            scroll = false;
             header.classList.remove("fixed");
         }
     });
