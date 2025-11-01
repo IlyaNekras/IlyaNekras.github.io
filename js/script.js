@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     let scroll = false;
+
     window.addEventListener("scroll", function () {
         if (!scroll && window.scrollY >= 50) {
             scroll = true;
